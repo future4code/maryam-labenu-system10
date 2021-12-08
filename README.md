@@ -15,9 +15,11 @@ Ele deve possuir, ao menos, as 3 entidades importantes:
 
 ### Docente
 
-- Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento, id da turma da pessoa e todas as especialidades dele. Há 5 especialidades: JS, CSS, React, Typescript, Programação Orientada a Objetos (POO)
+- Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento, id da turma da pessoa e todas as especialidades dele. Há 5 especialidades: JS, CSS, React, Typescript, Programação Orientada a Objetos (POO).
 
-As funcionalidades básicas são:
+##
+
+## As funcionalidades básicas são:
 
 → Criar turma;
 
