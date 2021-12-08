@@ -5,18 +5,18 @@ import { Classes } from "../types";
 export const createClasses = async (req: Request, res: Response): Promise<void> => {
     try {
 
-        const {nome, docentes, estudantes, modulo} = req.body
+        const {name, teachers, students, module} = req.body
 
-        if(!nome || !docentes || !estudantes || !modulo) {
+        if(!name || !teachers || !students || !module) {
             throw new Error("É necessário preencher todos os parâmetros.")
         }
 
         const classes: Classes = {
             id: Date.now().toString(),
-            nome: nome,
-            docentes: docentes,
-            estudantes: estudantes,
-            modulo: modulo
+            name: name,
+            teachers: teachers,
+            students: students,
+            module: module
         }
 
         await connection("labenu-system")

@@ -1,25 +1,58 @@
+/// Classes (Turma)
+
+export type Users = {
+    id: string,
+    name: string,
+    email: string,
+}
+
 export type Classes = {
     id: string
-    nome: string
-    docentes: string
-    estudantes: string
-    modulo: string
+    name: string
+    teachers: string
+    students: string
+    module: string
 }
+
+/// Student (Estudante)
 
 export type Student = {
     id: string
-    nome: string
+    name: string
     email: string
-    data_nasc: string
-    turma_id: string
-    hobbies: string
+    birth_date: string
+    classes_id: string
 }
 
-export type Docente = {
+export type Hobby_Student = {
     id: string
-    nome: string
+    students_id: string
+    hobby_id: string
+}
+
+export type Hobby = {
+    id: string
+    name: string
+}
+
+
+/// Teachers (Docentes)
+
+export type Teachers = {
+    id: string
+    name: string
     email: string
-    data_nasc: string
-    turma_id: string
-    especialidades: string
+    birth_date: string
+    classes_id: string
+}
+
+export type Specialties_Teacher = {
+    id: string
+    teachers_id: string
+    specialties_id: string
+}
+
+export type Specialties = {
+    id: string
+    name: string
 }
