@@ -7,7 +7,7 @@ Ele deve possuir, ao menos, as 3 entidades importantes:
 ### Turma
 
 - Toda turma é composta das seguintes características: id, nome, docentes, estudantes e módulo atual em que a turma está.
-- Pode assumir um valor entre 1 a 6 nas turmas ativas, ou `**0**`, indicando que as aulas dessa turma ainda não começaram (deve iniciar como **`0`**)
+- Pode assumir um valor entre 1 a 6 nas turmas ativas, ou **`0`**, indicando que as aulas dessa turma ainda não começaram (deve iniciar como **`0`**)
 
 ### Estudantes
 
