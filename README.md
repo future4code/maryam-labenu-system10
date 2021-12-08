@@ -4,6 +4,18 @@ Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, h
 
 Ele deve possuir, ao menos, as 3 entidades importantes:
 
+## Integrantes
+
+- Everton Guedes
+- Leonardo Gomes
+- Pablo Loredo
+
+## Planejamneto
+
+- Utilizamos a plataforma do Trello para divisão de tarefas pelo metódo Kanban.
+
+## Banco de Dados
+
 ### Turma
 
 - Toda turma é composta das seguintes características: id, nome, docentes, estudantes e módulo atual em que a turma está.
