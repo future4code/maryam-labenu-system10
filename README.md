@@ -19,7 +19,7 @@ Ele deve possuir, ao menos, as 3 entidades importantes:
 
 ##
 
-## As funcionalidades básicas são:
+- As funcionalidades básicas são:
 
 → Criar turma;
 
