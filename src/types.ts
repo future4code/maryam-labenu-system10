@@ -1,9 +1,33 @@
 /// Classes (Turma)
 
-export type Users = {
-    id: string,
-    name: string,
-    email: string,
+export abstract class User {
+    constructor(
+        protected id: string,
+        protected name: string,
+        protected email: string,
+        protected birthdate: string,
+        protected classId: string
+    ) { }
+
+    public getId(): string {
+        return this.id
+    }
+
+    public getName(): string {
+        return this.name
+    }
+
+    public getEmail(): string {
+        return this.email
+    }
+
+    public getBirthdate(): string {
+        return this.birthdate
+    }
+
+    public getTurmaId(): string {
+        return this.classId
+    }
 }
 
 export type Classes = {
@@ -16,43 +40,39 @@ export type Classes = {
 
 /// Student (Estudante)
 
-export type Student = {
-    id: string
-    name: string
-    email: string
-    birth_date: string
-    classes_id: string
-}
+export class Students extends User {
+    constructor(
+        id: string,
+        nome: string,
+        email: string,
+        birthdate: string,
+        classId: string,
+        protected hobby: string[]
+    ) {
+        super(id, nome, email, birthdate, classId)
+    }
 
-export type Hobby_Student = {
-    id: string
-    students_id: string
-    hobby_id: string
-}
-
-export type Hobby = {
-    id: string
-    name: string
+    public getHobby(): string[] {
+        return this.hobby
+    }
 }
 
 
 /// Teachers (Docentes)
 
-export type Teachers = {
-    id: string
-    name: string
-    email: string
-    birth_date: string
-    classes_id: string
-}
+export class Teacher extends User {
+    constructor(
+        id: string,
+        name: string,
+        email: string,
+        birthdate: string,
+        classId: string,
+        protected specialties: string[]
+    ) {
+        super(id, name, email, birthdate, classId)
+    }
 
-export type Specialties_Teacher = {
-    id: string
-    teachers_id: string
-    specialties_id: string
-}
-
-export type Specialties = {
-    id: string
-    name: string
+    public getSpecialties(): string[] {
+        return this.specialties
+    }
 }
