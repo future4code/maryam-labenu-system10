@@ -7,8 +7,8 @@ import { putClassesModule } from "./endpoints/putClassModule";
 // Turma 
 
 app.post("/classes", createClasses)
-app.get("/Allclasses", getAllClasses)
-app.put("./Changeclasses", putClassesModule )
+app.get("/classes", getAllClasses)
+app.put("./classes", putClassesModule )
 
 // Estudantes
 

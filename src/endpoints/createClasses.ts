@@ -19,7 +19,7 @@ export const createClasses = async (req: Request, res: Response): Promise<void> 
             module: module
         }
 
-        await connection("Classes")
+        await connection("LabenuSystem_Classes")
         .insert(classes)
 
         res.status(201).send({message: "Turma criada com sucesso!"})
