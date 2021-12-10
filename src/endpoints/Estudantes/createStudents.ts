@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { connection } from "../data/connection";
-import { Students } from "../types";
+import { connection } from "../../data/connection";
+import { Students } from "../../types";
 
 export const createStudents = async (
   req: Request,

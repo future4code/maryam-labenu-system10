@@ -1,5 +1,5 @@
-import { teacherType } from "../types";
-import { connection } from "../data/connection";
+import { teacherType } from "../../types";
+import { connection } from "../../data/connection";
 import { Request, Response } from "express";
 
 export const createTeachers = async (req:Request,res:Response): Promise<void> =>{
@@ -13,14 +13,14 @@ export const createTeachers = async (req:Request,res:Response): Promise<void> =>
 			id:Date.now().toString(),
 			name:name,
 			email:email,
-			birthdate:birthdate,
+			birthdate:new Date(birthdate),
 			classId:classId,
 			specialties:specialties
 			
 		}
 
 
-		await connection("LabenuSystem_Teacher")
+		await connection("LabenuSystem_Teachers")
 		.insert({
 			id:teachers.id,
 			name:teachers.name,
