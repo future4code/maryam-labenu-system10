@@ -3,11 +3,17 @@ import { updateClasses } from "./updateClasses";
 
 export const putClassesModule = async (req:Request, res: Response):Promise<any> => {
     try {
-        if(req.params.id === "" || req.body.module === ""){
-            throw new Error("Insira os dados corretamente!")
+        if (
+            !req.body.id ||
+            !req.body.module
+        ) {
+            res.status(400).send({
+                message: "Insira os dados corretamente!"
+            })
         }
+
         await updateClasses(
-            req.params.id,
+            req.body.id,
             req.body.module
         )
 
