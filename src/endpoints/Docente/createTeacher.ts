@@ -1,5 +1,5 @@
-import { teacherType } from "../types";
-import { connection } from "../data/connection";
+import { teacherType } from "../../types";
+import { connection } from "../../data/connection";
 import { Request, Response } from "express";
 
 export const createTeachers = async (req:Request,res:Response): Promise<void> =>{

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { connection } from "../data/connection";
-import { Classes } from "../types";
+import { connection } from "../../data/connection";
+import { Classes } from "../../types";
 
 export const getAllClasses = async (req:Request, res: Response): Promise<void> => {
     try{
