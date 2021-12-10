@@ -1,12 +1,13 @@
 import { connection } from "./connection";
 
 const printError = (error: any) => {
-    console.log(error.sqlMessage || error.message);
+  console.log(error.sqlMessage || error.message);
 };
 
 const createTables = () =>
-    connection
-        .raw(`
+  connection
+    .raw(
+      `
         CREATE TABLE IF NOT EXISTS LabenuSystem_Classes (
             id VARCHAR(255) PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
@@ -18,9 +19,9 @@ const createTables = () =>
             id VARCHAR(255) PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             email VARCHAR(255) NOT NULL UNIQUE,
-            birth_date DATE NOT NULL,
-            classes_id VARCHAR(255) NOT NULL,
-            FOREIGN KEY (classes_id) REFERENCES LabenuSystem_Classes(id)
+            birthdate DATE NOT NULL,
+            classId VARCHAR(255) NOT NULL,
+            FOREIGN KEY (classId) REFERENCES LabenuSystem_Classes(id)
         );
 
         CREATE TABLE IF NOT EXISTS LabenuSystem_Hobby (
@@ -30,10 +31,10 @@ const createTables = () =>
 
         CREATE TABLE IF NOT EXISTS LabenuSystem_Hobby_Student (
             id VARCHAR(255) PRIMARY KEY,
-            students_id VARCHAR(255) FOREIGN KEY NOT NULL,
-            hobby_id VARCHAR(255) FOREIGN KEY NOT NULL,
-            FOREIGN KEY (students_id) REFERENCES LabenuSystem_Students(id),
-            FOREIGN KEY (hobby_id) REFERENCES LabenuSystem_Hobby(id)
+            studentsId VARCHAR(255) FOREIGN KEY NOT NULL,
+            hobbyId VARCHAR(255) FOREIGN KEY NOT NULL,
+            FOREIGN KEY (studentsId) REFERENCES LabenuSystem_Students(id),
+            FOREIGN KEY (hobbyId) REFERENCES LabenuSystem_Hobby(id)
         );
         
 
@@ -42,36 +43,38 @@ const createTables = () =>
             id VARCHAR(255) PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             email VARCHAR(255) NOT NULL UNIQUE,
-            birth_date DATE NOT NULL,
-            classes_id VARCHAR(255) NOT NULL,
-            FOREIGN KEY (classes_id) REFERENCES LabenuSystem_Classes(id)
+            birthdate DATE NOT NULL,
+            classId VARCHAR(255) NOT NULL,
+            FOREIGN KEY (classId) REFERENCES LabenuSystem_Classes(id)
         );
 
         CREATE TABLE IF NOT EXISTS LabenuSystem_Specialties (
             id VARCHAR(255) PRIMARY KEY,
-            name VARCHAR(255) NOT NULL UNIQUE DEFAULT "JS",
+            name VARCHAR(255) NOT NULL UNIQUE DEFAULT "JS"
         );
         
         CREATE TABLE IF NOT EXISTS LabenuSystem_Specialties_Teacher (
             id VARCHAR(255) PRIMARY KEY,
-            teachers_id VARCHAR(255) NOT NULL,
-            specialties_id VARCHAR(255) NOT NULL,
-            FOREIGN KEY (teachers_id) REFERENCES LabenuSystem_Teachers(id),
-            FOREIGN KEY (specialties_id) REFERENCES LabenuSystem_Specialties(id)
+            teachersId VARCHAR(255) NOT NULL,
+            specialtiesId VARCHAR(255) NOT NULL,
+            FOREIGN KEY (teachersId) REFERENCES LabenuSystem_Teachers(id),
+            FOREIGN KEY (specialtiesId) REFERENCES LabenuSystem_Specialties(id)
         );
         
         
         
         
-        `)
-        .then(() => { console.log("Tabelas criadas") })
-        .catch(printError)
-
+        `
+    )
+    .then(() => {
+      console.log("Tabelas criadas");
+    })
+    .catch(printError);
 
 //
 
-const closeConnection = () => { connection.destroy() }
+const closeConnection = () => {
+  connection.destroy();
+};
 
-createTables()
-    .then()
-    .finally(closeConnection)
+createTables().then().finally(closeConnection);

@@ -1,26 +1,27 @@
 import { Request, Response } from "express";
 import { connection } from "../data/connection";
-import { Classes } from "../types";
 
 export const createClasses = async (req: Request, res: Response): Promise<void> => {
     try {
 
-        const {name, teachers, students, module} = req.body
+        const {name, module} = req.body
 
-        if(!name || !teachers || !students || !module) {
+        if(!name || !module) {
             throw new Error("É necessário preencher todos os parâmetros.")
         }
 
-        const classes: Classes = {
+        const newClasses = {
             id: Date.now().toString(),
             name: name,
-            teachers: teachers,
-            students: students,
             module: module
         }
 
         await connection("LabenuSystem_Classes")
-        .insert(classes)
+        .insert({
+            id: newClasses.id,
+            name: newClasses.name,
+            module: newClasses.module
+        })
 
         res.status(201).send({message: "Turma criada com sucesso!"})
 
