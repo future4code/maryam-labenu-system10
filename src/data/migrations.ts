@@ -25,7 +25,7 @@ const createTables = () =>
 
         CREATE TABLE IF NOT EXISTS LabenuSystem_Hobby (
             id VARCHAR(255) PRIMARY KEY,
-            name VARCHAR(255) NOT NULL UNIQUE,
+            name VARCHAR(255) NOT NULL UNIQUE
         );
 
         CREATE TABLE IF NOT EXISTS LabenuSystem_Hobby_Student (
@@ -60,7 +60,6 @@ const createTables = () =>
             FOREIGN KEY (specialties_id) REFERENCES LabenuSystem_Specialties(id)
         );
         
-
         
         
         

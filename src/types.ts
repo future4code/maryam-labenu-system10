@@ -76,3 +76,13 @@ export class Teacher extends User {
         return this.specialties
     }
 }
+
+export type teacherType = {
+    id:string,
+    name:string,
+    email:string,
+    birthdate:string,
+    classId:string,
+    specialties:string[]
+
+}
