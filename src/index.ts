@@ -9,7 +9,10 @@ import { createTeachers} from "./endpoints/createTeacher"
 app.post("/classes", createClasses)
 app.get("/classes", getAllClasses)
 app.put("/classes", putClassesModule )
+
+
 app.post("/teachers",createTeachers)
+
 
 // Estudantes
 
