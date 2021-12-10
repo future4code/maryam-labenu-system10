@@ -8,7 +8,7 @@ import { putClassesModule } from "./endpoints/putClassModule";
 
 app.post("/classes", createClasses)
 app.get("/classes", getAllClasses)
-app.put("./classes", putClassesModule )
+app.put("/classes", putClassesModule )
 
 // Estudantes
 

@@ -80,7 +80,7 @@ export type teacherType = {
     id:string,
     name:string,
     email:string,
-    birthdate:string,
+    birthdate:Date,
     classId:string,
     specialties:string[]
 
