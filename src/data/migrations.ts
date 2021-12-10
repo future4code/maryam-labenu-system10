@@ -61,7 +61,6 @@ const createTables = () =>
             FOREIGN KEY (specialtiesId) REFERENCES LabenuSystem_Specialties(id)
         );
         
-
         
         
         

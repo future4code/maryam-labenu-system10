@@ -71,7 +71,17 @@ export class Teacher extends User {
     super(id, name, email, birthdate, classId);
   }
 
-  public getSpecialties(): string[] {
-    return this.specialties;
-  }
+    public getSpecialties(): string[] {
+        return this.specialties
+    }
+}
+
+export type teacherType = {
+    id:string,
+    name:string,
+    email:string,
+    birthdate:string,
+    classId:string,
+    specialties:string[]
+
 }
